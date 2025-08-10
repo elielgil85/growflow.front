@@ -3,7 +3,9 @@ import { create } from 'zustand';
 import { type Task } from '@/types';
 import { toast } from '@/hooks/use-toast';
 
-const API_URL = '/api/tasks'; // URL Relativa para o proxy
+import { BACKEND_BASE_URL } from '@/constants/api';
+
+const API_URL = `${BACKEND_BASE_URL}/api/tasks`; // URL completa do backend
 
 type TaskState = {
   tasks: Task[];
