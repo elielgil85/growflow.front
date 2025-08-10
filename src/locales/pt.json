@@ -1,0 +1,119 @@
+{
+    "sidebar": {
+        "garden": "Jardim",
+        "tasks": "Lista de Tarefas",
+        "stats": "Estatísticas",
+        "customize": "Personalizar"
+    },
+    "loading": {
+        "message": "Cultivando seu jardim..."
+    },
+    "garden": {
+        "title": "Bem-vindo ao seu Jardim",
+        "description": "Cada planta representa uma tarefa. Conclua tarefas para ajudá-las a crescer!",
+        "empty": {
+            "title": "Seu jardim está vazio.",
+            "description": "Vá para a 'Lista de Tarefas' para semear novas sementes!"
+        }
+    },
+    "tasks": {
+        "addTask": {
+            "title": "Adicionar uma Nova Tarefa",
+            "description": "Isso plantará uma nova semente em seu jardim. Conclua-a para fazê-la crescer!"
+        },
+        "editTask": {
+            "title": "Editar Tarefa",
+            "description": "Faça alterações na sua tarefa aqui. Clique em salvar quando terminar.",
+            "form": {
+                "titleLabel": "Título da Tarefa",
+                "descriptionLabel": "Descrição",
+                "submitButton": "Salvar Alterações",
+                "submittingButton": "Salvando...",
+                "cancelButton": "Cancelar"
+            }
+        },
+        "form": {
+            "placeholder": "Título da Tarefa (Ex: Ler um capítulo de um livro)",
+            "descriptionPlaceholder": "Adicione mais detalhes... (opcional)",
+            "submitButton": "Adicionar Tarefa",
+            "submittingButton": "Adicionando...",
+            "validation": {
+                "nameRequired": "O título da tarefa deve ter pelo menos 3 caracteres."
+            }
+        },
+        "list": {
+            "title": "Suas Tarefas",
+            "description": "Aqui estão todas as plantas em seu jardim.",
+            "empty": "Adicione uma tarefa acima para começar!",
+            "noDescription": "Nenhuma descrição fornecida."
+        },
+        "toast": {
+            "addTask": {
+                "title": "Semente plantada!",
+                "description": "Sua nova tarefa \"{taskName}\" foi adicionada ao jardim."
+            }
+        },
+        "deleteDialog": {
+            "title": "Você tem certeza?",
+            "description": "Isso removerá permanentemente a tarefa \"{taskName}\" e sua planta correspondente do seu jardim. Esta ação não pode ser desfeita.",
+            "cancel": "Cancelar",
+            "delete": "Deletar"
+        }
+    },
+    "stats": {
+        "completionRate": {
+            "title": "Taxa de Conclusão",
+            "description": "{completed} de {total} tarefas concluídas."
+        },
+        "maturePlants": {
+            "title": "Plantas Maduras",
+            "description": "Plantas no crescimento máximo."
+        },
+        "totalPlants": {
+            "title": "Total de Plantas",
+            "description": "Sementes em seu jardim."
+        },
+        "growthStages": {
+            "title": "Estágios de Crescimento",
+            "description": "Distribuição de suas plantas por estágio de crescimento."
+        },
+        "plantVariety": {
+            "title": "Variedade de Plantas",
+            "description": "Os tipos de plantas em seu jardim."
+        }
+    },
+    "customize": {
+        "title": "Personalize Seu Jardim",
+        "description": "Personalize sua experiência. Mais temas e tipos de plantas estão a caminho!",
+        "comingSoon": {
+            "title": "Em Breve!",
+            "description": "Esta área permitirá que você escolha novos estilos de plantas e temas de jardim para tornar seu espaço de produtividade verdadeiramente seu."
+        },
+        "language": {
+            "title": "Configurações de Idioma",
+            "description": "Escolha seu idioma de preferência para a aplicação."
+        },
+        "theme": {
+            "title": "Aparência",
+            "description": "Escolha um tema para a aplicação.",
+            "light": "Claro",
+            "dark": "Escuro",
+            "system": "Sistema"
+        }
+    },
+    "languageSwitcher": {
+        "button": "Mudar idioma"
+    },
+    "plantTypes": {
+        "rose": "Rosa",
+        "tulip": "Tulipa",
+        "oak": "Carvalho",
+        "sunflower": "Girassol",
+        "cactus": "Cacto",
+        "bamboo": "Bambu",
+        "bonsai": "Bonsai",
+        "fern": "Samambaia",
+        "lily": "Lírio",
+        "maple": "Bordo"
+    }
+}

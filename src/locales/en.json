@@ -1,0 +1,119 @@
+{
+    "sidebar": {
+        "garden": "Garden",
+        "tasks": "Task List",
+        "stats": "Statistics",
+        "customize": "Customize"
+    },
+    "loading": {
+        "message": "Cultivating your garden..."
+    },
+    "garden": {
+        "title": "Welcome to Your Garden",
+        "description": "Each plant represents a task. Complete tasks to help them grow!",
+        "empty": {
+            "title": "Your garden is empty.",
+            "description": "Go to the 'Task List' to sow some new seeds!"
+        }
+    },
+    "tasks": {
+        "addTask": {
+            "title": "Add a New Task",
+            "description": "This will plant a new seed in your garden. Complete it to make it grow!"
+        },
+        "editTask": {
+            "title": "Edit Task",
+            "description": "Make changes to your task here. Click save when you're done.",
+            "form": {
+                "titleLabel": "Task Title",
+                "descriptionLabel": "Description",
+                "submitButton": "Save Changes",
+                "submittingButton": "Saving...",
+                "cancelButton": "Cancel"
+            }
+        },
+        "form": {
+            "placeholder": "Task Title (e.g., Read a chapter of a book)",
+            "descriptionPlaceholder": "Add more details... (optional)",
+            "submitButton": "Add Task",
+            "submittingButton": "Adding...",
+            "validation": {
+                "nameRequired": "Task title must be at least 3 characters."
+            }
+        },
+        "list": {
+            "title": "Your Tasks",
+            "description": "Here are all the plants in your garden.",
+            "empty": "Add a task above to get started!",
+            "noDescription": "No description provided."
+        },
+        "toast": {
+            "addTask": {
+                "title": "Seed planted!",
+                "description": "Your new task \"{taskName}\" has been added to the garden."
+            }
+        },
+        "deleteDialog": {
+            "title": "Are you sure?",
+            "description": "This will permanently remove the task \"{taskName}\" and its corresponding plant from your garden. This action cannot be undone.",
+            "cancel": "Cancel",
+            "delete": "Delete"
+        }
+    },
+    "stats": {
+        "completionRate": {
+            "title": "Completion Rate",
+            "description": "{completed} of {total} tasks completed."
+        },
+        "maturePlants": {
+            "title": "Mature Plants",
+            "description": "Plants at max growth."
+        },
+        "totalPlants": {
+            "title": "Total Plants",
+            "description": "Seeds in your garden."
+        },
+        "growthStages": {
+            "title": "Plant Growth Stages",
+            "description": "Distribution of your plants by growth stage."
+        },
+        "plantVariety": {
+            "title": "Plant Variety",
+            "description": "The types of plants in your garden."
+        }
+    },
+    "customize": {
+        "title": "Customize Your Garden",
+        "description": "Personalize your experience. More themes and plant types are on the way!",
+        "comingSoon": {
+            "title": "Coming Soon!",
+            "description": "This area will allow you to choose new plant styles and garden themes to make your productivity space truly yours."
+        },
+        "language": {
+            "title": "Language Settings",
+            "description": "Choose your preferred language for the application."
+        },
+        "theme": {
+            "title": "Appearance",
+            "description": "Choose a theme for the application.",
+            "light": "Light",
+            "dark": "Dark",
+            "system": "System"
+        }
+    },
+    "languageSwitcher": {
+        "button": "Change language"
+    },
+    "plantTypes": {
+        "rose": "Rose",
+        "tulip": "Tulip",
+        "oak": "Oak",
+        "sunflower": "Sunflower",
+        "cactus": "Cactus",
+        "bamboo": "Bamboo",
+        "bonsai": "Bonsai",
+        "fern": "Fern",
+        "lily": "Lily",
+        "maple": "Maple"
+    }
+}
