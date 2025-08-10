@@ -19,9 +19,11 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const AUTH_API_URL = '/api/auth';
-const USER_API_URL = '/api/tasks/user';
-const TASKS_API_URL = '/api/tasks';
+import { BACKEND_BASE_URL } from '@/constants/api';
+
+const AUTH_API_URL = `${BACKEND_BASE_URL}/api/auth`;
+const USER_API_URL = `${BACKEND_BASE_URL}/api/tasks/user`;
+const TASKS_API_URL = `${BACKEND_BASE_URL}/api/tasks`;
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
