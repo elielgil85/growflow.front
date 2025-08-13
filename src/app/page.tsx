@@ -17,7 +17,7 @@ type View = 'garden' | 'tasks' | 'stats' | 'customize';
 function MainApp() {
   const [view, setView] = useState<View>('garden');
   const { t } = useI18n();
-  const { logout, isAuthenticated, fetchTasks } = useAuth();
+  const { logout, isAuthenticated, fetchTasks, user } = useAuth();
   const { setTasks } = useTaskStore();
   
   const [isLoadingTasks, setIsLoadingTasks] = useState(true);
@@ -32,7 +32,7 @@ function MainApp() {
 
   useEffect(() => {
     const getTasks = async () => {
-      if (isAuthenticated) {
+      if (user) {
         try {
           setIsLoadingTasks(true);
           const tasksData: Task[] = await fetchTasks();
@@ -50,7 +50,7 @@ function MainApp() {
     };
   
     getTasks();
-  }, [isAuthenticated, fetchTasks, setTasks]);
+  }, [user, fetchTasks, setTasks]);
 
   const renderView = () => {
     switch (view) {

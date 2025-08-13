@@ -114,8 +114,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const fetchTasks = useCallback(async (): Promise<Task[]> => {
-    const currentToken = get().token;
-    if (!currentToken) {
+    if (!token) {
       // throw new Error('No authentication token found.');
       return []; // Retorna array vazio se não houver token
     }
@@ -123,7 +122,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       const res = await fetch(TASKS_API_URL, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${currentToken}`,
+          'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
       });
@@ -138,10 +137,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       console.error('Error fetching tasks:', error);
       throw error;
     }
-  }, [logout]);
-  
-  // hook para pegar o token atualizado
-  const get = () => ({ token });
+  }, [logout, token]);
 
   const value = {
     isAuthenticated: !!token,
