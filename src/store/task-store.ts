@@ -42,12 +42,12 @@ export const useTaskStore = create<TaskState>((set, get) => ({
       const res = await fetch(API_URL, {
         headers: getAuthHeaders(token),
       });
-      if (!res.ok) throw new Error('Failed to fetch tasks');
+      if (!res.ok) throw new Error('Failed to fetch prompts');
       const tasks = await res.json();
       set({ tasks, isLoading: false });
     } catch (error) {
       console.error(error);
-      toast({ title: 'Erro', description: 'Não foi possível carregar as tarefas.', variant: 'destructive' });
+      toast({ title: 'Erro', description: 'Não foi possível carregar os prompts.', variant: 'destructive' });
       set({ isLoading: false });
     }
   },
@@ -60,16 +60,16 @@ export const useTaskStore = create<TaskState>((set, get) => ({
         headers: getAuthHeaders(token),
         body: JSON.stringify(taskData),
       });
-      if (!res.ok) throw new Error('Failed to create task');
+      if (!res.ok) throw new Error('Failed to create prompt');
       const newTask = await res.json();
       set((state) => ({ tasks: [newTask, ...state.tasks] })); // Adiciona no início da lista
       toast({
-        title: 'Semente plantada!',
-        description: `Sua nova tarefa "${newTask.name}" foi adicionada ao jardim.`,
+        title: 'Prompt adicionado!',
+        description: `Seu novo prompt "${newTask.name}" foi adicionado à biblioteca.`,
       });
     } catch (error) {
       console.error(error);
-      toast({ title: 'Erro', description: 'Não foi possível adicionar a tarefa.', variant: 'destructive' });
+      toast({ title: 'Erro', description: 'Não foi possível adicionar o prompt.', variant: 'destructive' });
     }
   },
 
@@ -81,15 +81,15 @@ export const useTaskStore = create<TaskState>((set, get) => ({
           headers: getAuthHeaders(token),
           body: JSON.stringify(taskData),
       });
-      if (!res.ok) throw new Error('Failed to update task data');
+      if (!res.ok) throw new Error('Failed to update prompt data');
 
       const updatedTask = await res.json();
       set((state) => ({
           tasks: state.tasks.map((t) => (t._id === taskId ? updatedTask : t)),
       }));
       toast({
-          title: 'Tarefa atualizada!',
-          description: `Sua tarefa "${updatedTask.name}" foi salva com sucesso.`,
+          title: 'Prompt atualizado!',
+          description: `Seu prompt "${updatedTask.name}" foi salvo com sucesso.`,
       });
     } catch (error) {
         console.error(error);
@@ -120,7 +120,7 @@ export const useTaskStore = create<TaskState>((set, get) => ({
       if (!res.ok) {
         // Se a API falhar, reverte o estado local
         set({ tasks: originalTasks });
-        throw new Error('Failed to update task');
+        throw new Error('Failed to update prompt');
       }
 
       // Atualiza o estado com os dados retornados pela API (que podem incluir o growthStage atualizado)
@@ -132,14 +132,14 @@ export const useTaskStore = create<TaskState>((set, get) => ({
       // Mostra a notificação de crescimento se a tarefa foi completada
       if (finalUpdatedTask.completed && finalUpdatedTask.growthStage > task.growthStage) {
         toast({
-          title: "Está a crescer!",
-          description: `"${finalUpdatedTask.name}" cresceu para o estágio ${finalUpdatedTask.growthStage}.`
+          title: "Está a refinar!",
+          description: `"${finalUpdatedTask.name}" refinou para o estágio ${finalUpdatedTask.growthStage}.`
         })
       }
 
     } catch (error) {
       console.error(error);
-      toast({ title: 'Erro', description: 'Não foi possível atualizar a tarefa.', variant: 'destructive' });
+      toast({ title: 'Erro', description: 'Não foi possível atualizar o prompt.', variant: 'destructive' });
     }
   },
 
@@ -163,18 +163,18 @@ export const useTaskStore = create<TaskState>((set, get) => ({
       if (!res.ok) {
         // Se a API falhar, reverte
         set({ tasks: originalTasks });
-        throw new Error('Failed to delete task');
+        throw new Error('Failed to delete prompt');
       }
 
       toast({
-        title: "Planta removida",
-        description: `"${taskToDelete.name}" foi removida do seu jardim.`,
+        title: "Prompt removido",
+        description: `"${taskToDelete.name}" foi removido da sua biblioteca.`,
         variant: 'destructive'
       });
 
     } catch (error) {
       console.error(error);
-      toast({ title: 'Erro', description: 'Não foi possível remover a tarefa.', variant: 'destructive' });
+      toast({ title: 'Erro', description: 'Não foi possível remover o prompt.', variant: 'destructive' });
     }
   },
 }));

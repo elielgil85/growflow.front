@@ -2,20 +2,22 @@
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts"
 import { type Task } from '@/types';
 import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
+import { useI18n } from '@/context/i18n-context';
 
 interface TasksCompletedChartProps {
   data: Task[];
 }
 
 export function TasksCompletedChart({ data }: TasksCompletedChartProps) {
+  const { t } = useI18n();
   const chartData = Array.from({ length: 6 }, (_, i) => ({
-    stage: `Stage ${i}`,
+    stage: t('stats.growthStages.stageLabel', { stage: i }),
     count: data.filter(task => task.growthStage === i).length
   }));
 
   const chartConfig = {
     count: {
-      label: "Plants",
+      label: t('stats.totalPrompts.label'),
       color: "hsl(var(--primary))",
     },
   };

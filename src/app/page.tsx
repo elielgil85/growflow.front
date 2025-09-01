@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarTrigger, SidebarInset, SidebarFooter } from '@/components/ui/sidebar';
-import { Home, ListTodo, BarChart2, Settings, Leaf, LogOut } from 'lucide-react';
+import { Home, ListTodo, BarChart2, Settings, Leaf, LogOut, MessageSquare } from 'lucide-react';
 import { useTaskStore } from '@/store/task-store';
 import GardenView from '@/components/views/garden-view';
 import TaskListView from '@/components/views/task-list-view';
@@ -12,7 +12,7 @@ import { useI18n } from '@/context/i18n-context';
 import { useAuth } from '@/context/auth-context';
 import { type Task } from '@/types';
 
-type View = 'garden' | 'tasks' | 'stats' | 'customize';
+type View = 'garden' | 'prompts' | 'stats' | 'customize';
 
 function MainApp() {
   const [view, setView] = useState<View>('garden');
@@ -25,7 +25,7 @@ function MainApp() {
 
   const viewTitles: Record<View, string> = {
     garden: t('sidebar.garden'),
-    tasks: t('sidebar.tasks'),
+    prompts: t('sidebar.tasks'),
     stats: t('sidebar.stats'),
     customize: t('sidebar.customize'),
   };
@@ -39,8 +39,8 @@ function MainApp() {
           setTasks(tasksData);
           setError(null);
         } catch (err) {
-          console.error('Failed to get tasks:', err);
-          setError('Falha ao carregar as tarefas. Por favor, tente novamente.');
+          console.error('Failed to get prompts:', err);
+          setError('Falha ao carregar os prompts. Por favor, tente novamente.');
         } finally {
           setIsLoadingTasks(false);
         }
@@ -56,7 +56,7 @@ function MainApp() {
     switch (view) {
       case 'garden':
         return <GardenView />;
-      case 'tasks':
+      case 'prompts':
         return <TaskListView />;
       case 'stats':
         return <StatsView />;
@@ -85,8 +85,8 @@ function MainApp() {
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton onClick={() => setView('tasks')} isActive={view === 'tasks'} tooltip={t('sidebar.tasks')}>
-                  <ListTodo />
+                <SidebarMenuButton onClick={() => setView('prompts')} isActive={view === 'prompts'} tooltip={t('sidebar.tasks')}>
+                  <MessageSquare />
                   <span>{t('sidebar.tasks')}</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>

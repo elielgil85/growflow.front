@@ -3,12 +3,14 @@ import { Pie, PieChart, Tooltip, Cell } from "recharts"
 import { type Task } from '@/types';
 import { ChartContainer, ChartTooltipContent, ChartLegend, ChartLegendContent } from "@/components/ui/chart";
 import { useMemo } from "react";
+import { useI18n } from '@/context/i18n-context';
 
 interface PlantTypesChartProps {
   data: Task[];
 }
 
 export function PlantTypesChart({ data }: PlantTypesChartProps) {
+  const { t } = useI18n();
   const chartData = useMemo(() => {
     const typeCounts = data.reduce((acc, task) => {
       acc[task.plantType] = (acc[task.plantType] || 0) + 1;
@@ -22,7 +24,7 @@ export function PlantTypesChart({ data }: PlantTypesChartProps) {
     const config: any = {};
     chartData.forEach((item, index) => {
         config[item.name] = {
-            label: item.name.charAt(0).toUpperCase() + item.name.slice(1),
+            label: t('stats.plantVariety.categoryLabel', { category: item.name }),
             color: `hsl(var(--chart-${(index % 5) + 1}))`
         }
     });

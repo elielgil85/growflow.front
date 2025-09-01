@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import Link from 'next/link';
-import { Leaf } from 'lucide-react';
+import { Leaf, MessageSquare } from 'lucide-react';
 import { useAuth } from '@/context/auth-context';
 
 export default function RegisterPage() {
@@ -45,14 +45,14 @@ export default function RegisterPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-            <Leaf className="mx-auto h-12 w-12 text-primary" />
-            <h1 className="text-4xl font-headline font-bold text-gray-800 mt-4">GrowFlow</h1>
-            <p className="text-muted-foreground">Cultive sua produtividade.</p>
+            <MessageSquare className="mx-auto h-12 w-12 text-primary" />
+            <h1 className="text-4xl font-headline font-bold text-gray-800 mt-4">PromptFlow</h1>
+            <p className="text-muted-foreground">Explore e gerencie seus prompts de IA.</p>
         </div>
         <Card>
           <CardHeader>
             <CardTitle className="font-headline text-2xl">Registrar</CardTitle>
-            <CardDescription>Crie uma nova conta para começar a cultivar.</CardDescription>
+            <CardDescription>Crie uma nova conta para começar a explorar prompts.</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">

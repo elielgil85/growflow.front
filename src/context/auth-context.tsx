@@ -130,11 +130,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         if (res.status === 401) {
           logout();
         }
-        throw new Error('Failed to fetch tasks.');
+        throw new Error('Failed to fetch prompts.');
       }
       return await res.json();
     } catch (error) {
-      console.error('Error fetching tasks:', error);
+      console.error('Error fetching prompts:', error);
       throw error;
     }
   }, [logout, token]);

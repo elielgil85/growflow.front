@@ -1,8 +1,10 @@
-# GrowFlow: Your Productivity Garden
+# PromptFlow: Your AI Prompt Library
 
 ## Overview
 
-GrowFlow is a gamified to-do list application where tasks grow into a virtual garden. It aims to enhance productivity by providing a visually engaging and rewarding experience.
+PromptFlow is an AI prompt library application where users can explore, manage, and refine AI prompts. It aims to enhance productivity by providing a centralized and organized repository for AI prompts.
+
+**Important Note:** Before contributing or making any changes to this project, it is **highly recommended** to read the `GUIDE_LINE.md` file. This document provides comprehensive guidelines for maintenance and development, crucial for both human developers and AI agents.
 
 ## Technologies Used
 
@@ -33,17 +35,17 @@ GrowFlow is a gamified to-do list application where tasks grow into a virtual ga
 *   **`src/components`:** Houses various UI components, including shared UI elements (`src/components/ui`) and specific application views (`src/components/views`).
 *   **`src/context`:** Provides global contexts for authentication (`auth-context.tsx`) and internationalization (`i18n-context.tsx`).
 *   **`src/hooks`:** Custom React hooks for common functionalities.
-*   **`src/store`:** Contains Zustand stores for state management, e.g., `task-store.ts`.
-*   **`src/ai`:** Dedicated directory for Genkit AI configurations and flows, including `garden-data-generation.ts`.
+*   **`src/store`:** Contains Zustand stores for state management, e.g., `prompt-store.ts` (conceptually, still `task-store.ts` in code).
+*   **`src/ai`:** Dedicated directory for Genkit AI configurations and flows, including `example-prompt-generator.ts` (conceptually, still `garden-data-generation.ts` in code).
 *   **`src/locales`:** JSON files for different language translations.
 
 ## Key Features
 
-*   **Gamified To-Do List:** Tasks contribute to the growth of a virtual garden.
-*   **Multiple Views:** Users can switch between Garden, Task List, Statistics, and Customization views.
+*   **AI Prompt Management:** Explore, add, and refine AI prompts.
+*   **Multiple Views:** Users can switch between Prompt Library, Statistics, and Customization views.
 *   **User Authentication:** Secure login and registration.
 *   **Internationalization:** Support for multiple languages.
-*   **AI Integration:** Potential for AI-driven features, possibly related to garden growth or task management.
+*   **AI Integration:** Core functionality revolves around AI prompt generation and management.
 
 ## Development Scripts
 

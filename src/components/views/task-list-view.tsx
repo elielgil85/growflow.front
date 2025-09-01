@@ -20,7 +20,23 @@ import { type Task } from '@/types';
 import { useAuth } from '@/context/auth-context';
 import { useI18n } from '@/context/i18n-context';
 
-const plantTypes = ["rose", "tulip", "oak", "sunflower", "cactus", "bamboo", "bonsai", "fern", "lily", "maple"];
+
+
+const getPromptCategory = (plantType: string) => {
+  const mapping: Record<string, string> = {
+    "rose": "creative",
+    "tulip": "creative",
+    "oak": "coding",
+    "sunflower": "marketing",
+    "cactus": "education",
+    "bamboo": "general",
+    "bonsai": "utility",
+    "fern": "general",
+    "lily": "creative",
+    "maple": "coding",
+  };
+  return mapping[plantType] || "general";
+};
 
 export default function TaskListView() {
   const { tasks, addTask, toggleTaskCompleted, deleteTask } = useTaskStore();
@@ -52,7 +68,7 @@ export default function TaskListView() {
     const newTaskData = {
       name: data.name,
       description: data.description || '',
-      plantType: plantTypes[Math.floor(Math.random() * plantTypes.length)],
+      plantType: "general",
     };
     await addTask(newTaskData, token);
     reset();
@@ -109,25 +125,25 @@ export default function TaskListView() {
                                           checked={task.completed}
                                           onCheckedChange={() => handleToggle(task._id)}
                                           className="h-6 w-6 ml-2"
-                                          aria-label={`Mark task ${task.name} as complete`}
+                                          aria-label={`Mark prompt ${task.name} as refined`}
                                       />
                                       <AccordionTrigger className="flex-1 py-2 text-left">
                                         <span className={cn("font-semibold font-body text-lg", task.completed && "line-through text-muted-foreground")}>
                                             {task.name}
                                         </span>
                                       </AccordionTrigger>
-                                      <Badge variant="outline" className="capitalize font-mono text-sm self-center">{t(`plantTypes.${task.plantType}`)}</Badge>
+                                      <Badge variant="outline" className="capitalize font-mono text-sm self-center">{t(`promptCategories.${getPromptCategory(task.plantType)}`)}</Badge>
                                       
                                       <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary rounded-full" onClick={() => handleEditClick(task)}>
                                         <Pencil className="h-5 w-5" />
-                                        <span className="sr-only">Edit task</span>
+                                        <span className="sr-only">Edit prompt</span>
                                       </Button>
                                       
                                       <AlertDialog>
                                           <AlertDialogTrigger asChild>
                                               <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-destructive rounded-full">
                                                   <Trash2 className="h-5 w-5" />
-                                                  <span className="sr-only">Delete task</span>
+                                                  <span className="sr-only">Delete prompt</span>
                                               </Button>
                                           </AlertDialogTrigger>
                                           <AlertDialogContent>

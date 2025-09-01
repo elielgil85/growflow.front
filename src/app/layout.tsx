@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'GrowFlow: Your Productivity Garden',
-  description: 'A gamified to-do list where tasks grow into a virtual garden.',
+  description: 'A library of AI prompts for various use cases.',
 };
 
 export default function RootLayout({

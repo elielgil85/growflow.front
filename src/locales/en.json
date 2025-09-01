@@ -1,31 +1,31 @@
 {
     "sidebar": {
-        "garden": "Garden",
-        "tasks": "Task List",
+        "garden": "Prompt Library",
+        "tasks": "Prompt Library",
         "stats": "Statistics",
         "customize": "Customize"
     },
     "loading": {
-        "message": "Cultivating your garden..."
+        "message": "Loading prompt library..."
     },
     "garden": {
-        "title": "Welcome to Your Garden",
-        "description": "Each plant represents a task. Complete tasks to help them grow!",
+        "title": "Welcome to Your Prompt Library",
+        "description": "Each prompt is a valuable resource. Explore and utilize them!",
         "empty": {
-            "title": "Your garden is empty.",
-            "description": "Go to the 'Task List' to sow some new seeds!"
+            "title": "Your prompt library is empty.",
+            "description": "Go to the 'Prompt Library' to add new prompts!"
         }
     },
     "tasks": {
         "addTask": {
-            "title": "Add a New Task",
-            "description": "This will plant a new seed in your garden. Complete it to make it grow!"
+            "title": "Add a New Prompt",
+            "description": "This will add a new prompt to your library. Refine it for better results!"
         },
         "editTask": {
-            "title": "Edit Task",
-            "description": "Make changes to your task here. Click save when you're done.",
+            "title": "Edit Prompt",
+            "description": "Make changes to your prompt here. Click save when you're done.",
             "form": {
-                "titleLabel": "Task Title",
+                "titleLabel": "Prompt Title",
                 "descriptionLabel": "Description",
                 "submitButton": "Save Changes",
                 "submittingButton": "Saving...",
@@ -33,61 +33,63 @@
             }
         },
         "form": {
-            "placeholder": "Task Title (e.g., Read a chapter of a book)",
+            "placeholder": "Prompt Title (e.g., Creative Writing Assistant)",
             "descriptionPlaceholder": "Add more details... (optional)",
-            "submitButton": "Add Task",
+            "submitButton": "Add Prompt",
             "submittingButton": "Adding...",
             "validation": {
-                "nameRequired": "Task title must be at least 3 characters."
+                "nameRequired": "Prompt title must be at least 3 characters."
             }
         },
         "list": {
-            "title": "Your Tasks",
-            "description": "Here are all the plants in your garden.",
-            "empty": "Add a task above to get started!",
+            "title": "Your Prompts",
+            "description": "Here are all the prompts in your library.",
+            "empty": "Add a prompt above to get started!",
             "noDescription": "No description provided."
         },
         "toast": {
             "addTask": {
-                "title": "Seed planted!",
-                "description": "Your new task \"{taskName}\" has been added to the garden."
+                "title": "Prompt added!",
+                "description": "Your new prompt \"{taskName}\" has been added to the library."
             }
         },
         "deleteDialog": {
             "title": "Are you sure?",
-            "description": "This will permanently remove the task \"{taskName}\" and its corresponding plant from your garden. This action cannot be undone.",
+            "description": "This will permanently remove the prompt \"{taskName}\" from your library. This action cannot be undone.",
             "cancel": "Cancel",
             "delete": "Delete"
         }
     },
     "stats": {
         "completionRate": {
-            "title": "Completion Rate",
-            "description": "{completed} of {total} tasks completed."
+            "title": "Refinement Rate",
+            "description": "{completed} of {total} prompts refined."
         },
         "maturePlants": {
-            "title": "Mature Plants",
-            "description": "Plants at max growth."
+            "title": "Refined Prompts",
+            "description": "Prompts at max refinement."
         },
-        "totalPlants": {
-            "title": "Total Plants",
-            "description": "Seeds in your garden."
+        "totalPrompts": {
+            "title": "Total Prompts",
+            "description": "Prompts in your library."
         },
         "growthStages": {
-            "title": "Plant Growth Stages",
-            "description": "Distribution of your plants by growth stage."
+            "title": "Prompt Refinement Stages",
+            "description": "Distribution of your prompts by refinement stage.",
+            "stageLabel": "Refinement Stage {stage}"
         },
         "plantVariety": {
-            "title": "Plant Variety",
-            "description": "The types of plants in your garden."
+            "title": "Prompt Categories",
+            "description": "The categories of prompts in your library.",
+            "categoryLabel": "{category} Prompts"
         }
     },
     "customize": {
-        "title": "Customize Your Garden",
-        "description": "Personalize your experience. More themes and plant types are on the way!",
+        "title": "Customize Your Library",
+        "description": "Personalize your experience. More themes and prompt categories are on the way!",
         "comingSoon": {
             "title": "Coming Soon!",
-            "description": "This area will allow you to choose new plant styles and garden themes to make your productivity space truly yours."
+            "description": "This area will allow you to choose new prompt display styles and library themes to make your prompt management space truly yours."
         },
         "language": {
             "title": "Language Settings",
@@ -104,16 +106,20 @@
     "languageSwitcher": {
         "button": "Change language"
     },
-    "plantTypes": {
-        "rose": "Rose",
-        "tulip": "Tulip",
-        "oak": "Oak",
-        "sunflower": "Sunflower",
-        "cactus": "Cactus",
-        "bamboo": "Bamboo",
-        "bonsai": "Bonsai",
-        "fern": "Fern",
-        "lily": "Lily",
-        "maple": "Maple"
+    "promptCategories": {
+        "creative": "Creative",
+        "coding": "Coding",
+        "marketing": "Marketing",
+        "education": "Education",
+        "general": "General",
+        "utility": "Utility"
+    },
+    "prompt": {
+        "categoryLabel": "Category",
+        "refinementStageLabel": "Refinement Stage",
+        "status": {
+            "refined": "Refined",
+            "unrefined": "Unrefined"
+        }
     }
 }

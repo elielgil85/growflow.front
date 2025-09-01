@@ -1,4 +1,6 @@
 // src/types/index.ts
+// Note: 'Task' is conceptually now a 'Prompt' in the UI,
+// but the backend still refers to it as a task.
 export type Task = {
   _id: string; // MongoDB uses _id
   userId: string;

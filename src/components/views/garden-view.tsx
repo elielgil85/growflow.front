@@ -3,7 +3,7 @@ import { useTaskStore } from '@/store/task-store';
 import Plant from '@/components/plant';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Leaf } from 'lucide-react';
+import { Leaf, MessageSquare } from 'lucide-react';
 import { useI18n } from '@/context/i18n-context';
 import { type Task } from '@/types';
 
@@ -34,7 +34,7 @@ export default function GardenView() {
                     tasks.map(task => <Plant key={task._id} task={mapTaskToPlant(task)} />)
                 ) : (
                     <div className="col-span-full flex flex-col items-center justify-center h-full min-h-[300px] text-center text-muted-foreground">
-                        <Leaf className="h-12 w-12 mb-4" />
+                        <MessageSquare className="h-12 w-12 mb-4" />
                         <p className="text-lg font-semibold">{t('garden.empty.title')}</p>
                         <p>{t('garden.empty.description')}</p>
                     </div>

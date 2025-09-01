@@ -3,6 +3,7 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
 import { Flower2, Sprout, Leaf, CheckCircle2, Circle } from 'lucide-react';
+import { useI18n } from '@/context/i18n-context';
 
 interface MappedTask {
     id: string;
@@ -29,6 +30,7 @@ const PlantIcon = ({ stage }: { stage: number }) => {
 
 export default function Plant({ task }: { task: MappedTask }) {
   const { name, growthStage, completed, type } = task;
+  const { t } = useI18n();
 
   return (
     <TooltipProvider delayDuration={100}>
@@ -43,12 +45,12 @@ export default function Plant({ task }: { task: MappedTask }) {
         </TooltipTrigger>
         <TooltipContent className="bg-background border-primary shadow-lg">
           <p className="font-bold font-headline">{name}</p>
-          <p className="text-sm text-muted-foreground">Type: <span className="capitalize font-semibold text-foreground">{type}</span></p>
-          <p className="text-sm text-muted-foreground">Growth Stage: {growthStage}/5</p>
+          <p className="text-sm text-muted-foreground">{t('prompt.categoryLabel')}: <span className="capitalize font-semibold text-foreground">{type}</span></p>
+          <p className="text-sm text-muted-foreground">{t('prompt.refinementStageLabel')}: {growthStage}/5</p>
           <div className="flex items-center gap-2 mt-2">
             {completed ? <CheckCircle2 className="h-4 w-4 text-primary" /> : <Circle className="h-4 w-4 text-muted-foreground" />}
             <span className={cn('text-sm font-semibold', completed ? 'text-primary' : 'text-muted-foreground')}>
-              {completed ? 'Completed' : 'Pending'}
+              {completed ? t('prompt.status.refined') : t('prompt.status.unrefined')}
             </span>
           </div>
         </TooltipContent>

@@ -21,7 +21,7 @@ interface EditTaskSheetProps {
 }
 
 const taskSchema = z.object({
-  name: z.string().min(3, 'O título da tarefa deve ter pelo menos 3 caracteres.'),
+  name: z.string().min(3),
   description: z.string().optional(),
 });
 

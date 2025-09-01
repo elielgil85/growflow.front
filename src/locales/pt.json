@@ -1,31 +1,31 @@
 {
     "sidebar": {
-        "garden": "Jardim",
-        "tasks": "Lista de Tarefas",
+        "garden": "Biblioteca de Prompts",
+        "tasks": "Biblioteca de Prompts",
         "stats": "Estatísticas",
         "customize": "Personalizar"
     },
     "loading": {
-        "message": "Cultivando seu jardim..."
+        "message": "Carregando biblioteca de prompts..."
     },
     "garden": {
-        "title": "Bem-vindo ao seu Jardim",
-        "description": "Cada planta representa uma tarefa. Conclua tarefas para ajudá-las a crescer!",
+        "title": "Bem-vindo à sua Biblioteca de Prompts",
+        "description": "Cada prompt é um recurso valioso. Explore e utilize-os!",
         "empty": {
-            "title": "Seu jardim está vazio.",
-            "description": "Vá para a 'Lista de Tarefas' para semear novas sementes!"
+            "title": "Sua biblioteca de prompts está vazia.",
+            "description": "Vá para a 'Biblioteca de Prompts' para adicionar novos prompts!"
         }
     },
     "tasks": {
         "addTask": {
-            "title": "Adicionar uma Nova Tarefa",
-            "description": "Isso plantará uma nova semente em seu jardim. Conclua-a para fazê-la crescer!"
+            "title": "Adicionar um Novo Prompt",
+            "description": "Isso adicionará um novo prompt à sua biblioteca. Refine-o para melhores resultados!"
         },
         "editTask": {
-            "title": "Editar Tarefa",
-            "description": "Faça alterações na sua tarefa aqui. Clique em salvar quando terminar.",
+            "title": "Editar Prompt",
+            "description": "Faça alterações no seu prompt aqui. Clique em salvar quando terminar.",
             "form": {
-                "titleLabel": "Título da Tarefa",
+                "titleLabel": "Título do Prompt",
                 "descriptionLabel": "Descrição",
                 "submitButton": "Salvar Alterações",
                 "submittingButton": "Salvando...",
@@ -33,61 +33,63 @@
             }
         },
         "form": {
-            "placeholder": "Título da Tarefa (Ex: Ler um capítulo de um livro)",
+            "placeholder": "Título do Prompt (Ex: Assistente de Escrita Criativa)",
             "descriptionPlaceholder": "Adicione mais detalhes... (opcional)",
-            "submitButton": "Adicionar Tarefa",
+            "submitButton": "Adicionar Prompt",
             "submittingButton": "Adicionando...",
             "validation": {
-                "nameRequired": "O título da tarefa deve ter pelo menos 3 caracteres."
+                "nameRequired": "O título do prompt deve ter pelo menos 3 caracteres."
             }
         },
         "list": {
-            "title": "Suas Tarefas",
-            "description": "Aqui estão todas as plantas em seu jardim.",
-            "empty": "Adicione uma tarefa acima para começar!",
+            "title": "Seus Prompts",
+            "description": "Aqui estão todos os prompts em sua biblioteca.",
+            "empty": "Adicione um prompt acima para começar!",
             "noDescription": "Nenhuma descrição fornecida."
         },
         "toast": {
             "addTask": {
-                "title": "Semente plantada!",
-                "description": "Sua nova tarefa \"{taskName}\" foi adicionada ao jardim."
+                "title": "Prompt adicionado!",
+                "description": "Seu novo prompt \"{taskName}\" foi adicionado à biblioteca."
             }
         },
         "deleteDialog": {
             "title": "Você tem certeza?",
-            "description": "Isso removerá permanentemente a tarefa \"{taskName}\" e sua planta correspondente do seu jardim. Esta ação não pode ser desfeita.",
+            "description": "Isso removerá permanentemente o prompt \"{taskName}\" da sua biblioteca. Esta ação não pode ser desfeita.",
             "cancel": "Cancelar",
             "delete": "Deletar"
         }
     },
     "stats": {
         "completionRate": {
-            "title": "Taxa de Conclusão",
-            "description": "{completed} de {total} tarefas concluídas."
+            "title": "Taxa de Refinamento",
+            "description": "{completed} de {total} prompts refinados."
         },
         "maturePlants": {
-            "title": "Plantas Maduras",
-            "description": "Plantas no crescimento máximo."
+            "title": "Prompts Refinados",
+            "description": "Prompts no refinamento máximo."
         },
-        "totalPlants": {
-            "title": "Total de Plantas",
-            "description": "Sementes em seu jardim."
+        "totalPrompts": {
+            "title": "Total de Prompts",
+            "description": "Prompts em sua biblioteca."
         },
         "growthStages": {
-            "title": "Estágios de Crescimento",
-            "description": "Distribuição de suas plantas por estágio de crescimento."
+            "title": "Estágios de Refinamento de Prompt",
+            "description": "Distribuição de seus prompts por estágio de refinamento.",
+            "stageLabel": "Estágio de Refinamento {stage}"
         },
         "plantVariety": {
-            "title": "Variedade de Plantas",
-            "description": "Os tipos de plantas em seu jardim."
+            "title": "Categorias de Prompt",
+            "description": "As categorias de prompts em sua biblioteca.",
+            "categoryLabel": "Prompts de {category}"
         }
     },
     "customize": {
-        "title": "Personalize Seu Jardim",
-        "description": "Personalize sua experiência. Mais temas e tipos de plantas estão a caminho!",
+        "title": "Personalize Sua Biblioteca",
+        "description": "Personalize sua experiência. Mais temas e categorias de prompt estão a caminho!",
         "comingSoon": {
             "title": "Em Breve!",
-            "description": "Esta área permitirá que você escolha novos estilos de plantas e temas de jardim para tornar seu espaço de produtividade verdadeiramente seu."
+            "description": "Esta área permitirá que você escolha novos estilos de exibição de prompt e temas de biblioteca para tornar seu espaço de gerenciamento de prompt verdadeiramente seu."
         },
         "language": {
             "title": "Configurações de Idioma",
@@ -104,16 +106,20 @@
     "languageSwitcher": {
         "button": "Mudar idioma"
     },
-    "plantTypes": {
-        "rose": "Rosa",
-        "tulip": "Tulipa",
-        "oak": "Carvalho",
-        "sunflower": "Girassol",
-        "cactus": "Cacto",
-        "bamboo": "Bambu",
-        "bonsai": "Bonsai",
-        "fern": "Samambaia",
-        "lily": "Lírio",
-        "maple": "Bordo"
+    "promptCategories": {
+        "creative": "Criativo",
+        "coding": "Codificação",
+        "marketing": "Marketing",
+        "education": "Educação",
+        "general": "Geral",
+        "utility": "Utilitário"
+    },
+    "prompt": {
+        "categoryLabel": "Categoria",
+        "refinementStageLabel": "Estágio de Refinamento",
+        "status": {
+            "refined": "Refinado",
+            "unrefined": "Não Refinado"
+        }
     }
 }
