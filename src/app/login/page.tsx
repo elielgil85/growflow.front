@@ -70,17 +70,22 @@ export default function LoginPage() {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="access_id">Access ID</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  placeholder="Identificador Privado"
+                  // Mudamos o ID e Name para não ter a palavra "email"
+                  // Isso evita que o navegador puxe o histórico de e-mails salvos
+                  id="access_id"
+                  name="access_id"
+                  type="email" // Mantido para não mexer no back-end
+                  placeholder="••••••••••••"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   disabled={isLoading}
                   autoComplete="off"
-                  // Adiciona essa linha abaixo para esconder o texto na live
+                  autoCorrect="off"
+                  spellCheck="false"
+                  // Mantém o visual de bolinhas (password style)
                   style={{ WebkitTextSecurity: "disc" } as React.CSSProperties}
                 />
               </div>
