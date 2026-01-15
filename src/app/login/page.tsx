@@ -68,24 +68,23 @@ export default function LoginPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
               <div className="space-y-2">
                 <Label htmlFor="access_id">Access ID</Label>
                 <Input
-                  // Mudamos o ID e Name para não ter a palavra "email"
-                  // Isso evita que o navegador puxe o histórico de e-mails salvos
                   id="access_id"
                   name="access_id"
-                  type="email" // Mantido para não mexer no back-end
+                  // 2. Mudamos para type="text" ou "tel" - o navegador não valida e-mail neles
+                  // Mas o valor enviado via estado (useState) continua sendo seu e-mail
+                  type="text"
+                  inputMode="email" // Ajuda o teclado do celular, mas não ativa validação chata
                   placeholder="••••••••••••"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   disabled={isLoading}
                   autoComplete="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                  // Mantém o visual de bolinhas (password style)
+                  // 3. O estilo que esconde as letras (o ponto crucial)
                   style={{ WebkitTextSecurity: "disc" } as React.CSSProperties}
                 />
               </div>
